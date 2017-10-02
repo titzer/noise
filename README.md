@@ -1,2 +1,3 @@
 # noise
-Tools for studying noise in computer performance measurement
+
+This repository contains miscellaneous tools for studying variance in computer performance measurement.
