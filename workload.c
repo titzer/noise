@@ -9,3 +9,11 @@ int spin_workload(void* input) {
 int empty_workload(void* nonce) {
   return 0;
 }
+
+int add_workload(void* input) {
+  unsigned i = 0, sum = 0, max = (unsigned)input;
+  for (i = 0; i < max; i++) {
+    sum += i;
+  }
+  return (int)sum;
+}

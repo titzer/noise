@@ -9,5 +9,6 @@ typedef struct {
 
 int spin_workload(void* count);
 int empty_workload(void* nonce);
+int add_workload(void* max);
 
 #endif
