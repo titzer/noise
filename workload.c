@@ -1,5 +1,7 @@
+#include <stdint.h>
+
 int spin_workload(void* input) {
-  unsigned count = (unsigned)input, i = 0;
+  unsigned count = (unsigned)(uintptr_t)input, i = 0;
   for (i = 0; i < count; i++) {
     __asm__ __volatile__ ("");
   }
@@ -11,7 +13,7 @@ int empty_workload(void* nonce) {
 }
 
 int add_workload(void* input) {
-  unsigned i = 0, sum = 0, max = (unsigned)input;
+  unsigned i = 0, sum = 0, max = (unsigned)(uintptr_t)input;
   for (i = 0; i < max; i++) {
     sum += i;
   }

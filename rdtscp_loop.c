@@ -3,18 +3,18 @@
 #include <unistd.h>
 #include "workload.h"
 
-#define NUM_SAMPLES 16
+#define NUM_SAMPLES 28
 #define DEFAULT_RUNS 100
-#define NUM_GROUPS 10
-#define WORKLOAD add_workload((void*)1000000)
-#define SLEEP_US 50000
+#define NUM_GROUPS 100
+#define WORKLOAD 
+#define SLEEP_US 1000
 
 uint64_t samples[NUM_SAMPLES];
 uint64_t sum;
 uint64_t common_vals[NUM_SAMPLES];
 unsigned common_count[NUM_SAMPLES];
 
-uint64_t __attribute__((always_inline)) rdtscp_inline() {
+__attribute__((always_inline)) inline uint64_t rdtscp_inline() {
   uint64_t tsc;
   __asm__ __volatile__(";"
                        "lfence;"
